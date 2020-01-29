@@ -2105,6 +2105,10 @@ if(SWIFTSHADER_BUILD_VULKAN)
         set(SPIRV-Headers_SOURCE_DIR "${THIRD_PARTY_DIR}/SPIRV-Headers")
         list(APPEND VULKAN_INCLUDE_DIR "${SPIRV-Headers_SOURCE_DIR}/include")
 
+        # Workaround for unnecessary PythonInterp requirement
+        macro(find_host_package)
+        endmacro()
+
         add_subdirectory(third_party/SPIRV-Tools)
     endif()
 
